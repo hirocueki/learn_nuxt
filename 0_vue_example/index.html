@@ -26,15 +26,14 @@
       el: '#app',
       data: data,
       render: (element) => {
-        return element("p",
-          {'style': 'font-size: 20px; color: red;'},
-          data.message);
+        return element("ol",
+        [
+          element("li", "item 1"),
+          element("li", "item 2"),
+          element("li", "item 3")
+      ]);
       }
     })
-
-    function doAction() {
-      data.message = 'You clicked!';
-    }
   </script>
 </body>
 
