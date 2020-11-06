@@ -13,9 +13,7 @@
     {{ message }}
   </div>
   <hr>
-  <button onclick="doAction();">
-    click
-  </button>
+  <input type="text" onInput="doAction(event);">
 
   <script>
     var data = {
@@ -27,8 +25,8 @@
       data: data
     })
 
-    function doAction() {
-      data.message = 'You Clicked!';
+    function doAction(event) {
+      data.message = event.target.value;
     }
   </script>
 </body>
