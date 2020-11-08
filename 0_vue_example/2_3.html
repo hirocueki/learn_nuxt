@@ -29,44 +29,30 @@
   </style>
   <h1>Vue.js</h1>
   <div id="app">
-    <template v-if='flag'>
-      <p>データをテーブル表示する</p>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>mail</th>
-        <tr>
-          <td>Taro</td>
-          <td>taro@yamada.com</td>
-        </tr>
-        <tr>
-          <td>Taro</td>
-          <td>taro@yamada.com</td>
-        </tr>
-        <tr>
-          <td>Taro</td>
-          <td>taro@yamada.com</td>
-        </tr>
-        </tr>
-      </table>
-    </template>
-    <template v-else>
-      <p>データをリスト表示する</p>
-      <ul>
-        <li>Taroのアドレスは、taroです</li>
-        <li>Taroのアドレスは、taroです</li>
-        <li>Taroのアドレスは、taroです</li>
-      </ul>
+
+    <p>データをテーブル表示する</p>
+    <table>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>mail</th>
+      <tr v-for='(item, id) in items'>
+        <td>{{id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.mail}}</td>
+      </tr>
+    </table>
     </template>
   </div>
-  <hr>
-  <button onclick='doAction();'>
-    Click
-  </button>
-
   <script>
     var data = {
-      flag: true
+      items: [
+        {name: "taro", mail: 'taro@test.com'},
+        {name: "taro", mail: 'taro@test.com'},
+        {name: "taro", mail: 'taro@test.com'},
+        {name: "taro", mail: 'taro@test.com'},
+        {name: "taro", mail: 'taro@test.com'},
+      ]
     };
 
     var app = new Vue({
