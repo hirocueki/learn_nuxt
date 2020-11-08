@@ -1,24 +1,28 @@
 <template>
   <div id="app">
-    <Calc v-bind:title="message" v-on:result-event='appAction' />
+    <HelloWorld v-bind:title='message' v-bind:num='num' />
+    <!-- <Calc v-bind:title="message" v-on:result-event='appAction' />
     <hr>
     <div>
       <table v-html='log'></table>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import Calc from "./components/Calc.vue";
+import HelloWorld from "./components/HelloWorld.vue";
+// import Calc from "./components/Calc.vue";
 
 export default {
   name: "app",
   components: {
-    Calc,
+    HelloWorld,
+    // Calc,
   },
   data: function(){
     return {
-      message:'CALC',
+      message:'validate',
+      num: 123,
       result: [],
     }
   },

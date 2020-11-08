@@ -4,12 +4,7 @@
     <p>
       {{ message }}
     </p>
-  <hr>
-  <div>
-    <input type="text" v-model='input'>
-    <button v-on:click='doAction'>Click</button>
-  </div>
-
+    <p>Number: {{ num }}</p>
   </div>
 </template>
 
@@ -17,33 +12,27 @@
 export default {
   name: "HelloWorld",
   props: {
-    title:String,
+    title: String,
+    num: Number,
   },
-  data:function(){
+  data: function () {
     return {
-      message: 'お名前は?',
-      input:'no name',
-    }
+      message: "バリデーションチェック",
+    };
   },
-  methods:{
-    doAction:function(){
-      this.message = 'こんにちは ' + this.input + 'さん!';
-      this.$emit('result-event', this.input);
-    }
-  }
 };
 </script>
 
 <style>
-div{
-  margin:0px;
-  padding:0px;
+div {
+  margin: 0px;
+  padding: 0px;
   text-align: left;
 }
-h1{
+h1 {
   font-size: 72pt;
 }
-p{
+p {
   color: #666;
   font-size: 16pt;
 }
