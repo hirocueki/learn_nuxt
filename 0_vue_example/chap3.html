@@ -17,11 +17,10 @@
   </style>
   <h1>Vue.js</h1>
   <div id="app">
-    <div><hello name="Taro" /></div>
-    <div><hello name="Hanako" /></div>
+    <hello v-for='item in data' v-bind:name='item' />
   </div>
   <script>
-    Vue.component('hello',
+    var hello = Vue.component('hello',
       {
         props: { name:String },
         template: '<p class= "hello">Hello {{name}}</p>',
@@ -29,6 +28,9 @@
 
     var app = new Vue({
       el: '#app',
+      data: {
+        data: ["Taro", 'Hanako', 'Sachiko']
+      }
     });
   </script>
 </body>
