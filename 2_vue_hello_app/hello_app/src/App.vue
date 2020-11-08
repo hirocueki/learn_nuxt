@@ -1,18 +1,31 @@
 <template>
   <div id="app">
-    <HelloWorld title="Hello" />
+    <HelloWorld v-bind:title="message" />
+    <hr />
+    <button v-on:click="doAction">change title</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    HelloWorld,
+  },
+  data: function(){
+    return {
+      message:'HELLO',
+    }
+  },
+  methods:{
+    doAction:function(){
+      var input = prompt('new title:');
+      this.message = input;
+    }
   }
-}
+};
 </script>
 
 <style>
