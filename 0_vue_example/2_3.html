@@ -36,8 +36,8 @@
         <th>id</th>
         <th>Name</th>
         <th>mail</th>
-      <tr v-for='(item, id) in items'>
-        <td>{{id}}</td>
+      <tr v-for='(item, key) in items'>
+        <td>{{key}}</td>
         <td>{{item.name}}</td>
         <td>{{item.mail}}</td>
       </tr>
@@ -46,13 +46,13 @@
   </div>
   <script>
     var data = {
-      items: [
-        {name: "taro", mail: 'taro@test.com'},
-        {name: "taro", mail: 'taro@test.com'},
-        {name: "taro", mail: 'taro@test.com'},
-        {name: "taro", mail: 'taro@test.com'},
-        {name: "taro", mail: 'taro@test.com'},
-      ]
+      items: {
+        Taro1: {name: "taro", mail: 'taro@test.com'},
+        Taro2: {name: "taro", mail: 'taro@test.com'},
+        Taro3: {name: "taro", mail: 'taro@test.com'},
+        Taro4: {name: "taro", mail: 'taro@test.com'},
+        Taro5: {name: "taro", mail: 'taro@test.com'},
+      }
     };
 
     var app = new Vue({
