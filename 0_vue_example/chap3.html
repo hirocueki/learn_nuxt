@@ -17,17 +17,14 @@
   </style>
   <h1>Vue.js</h1>
   <div id="app">
-    <hello />
+    <div><hello name="Taro" /></div>
+    <div><hello name="Hanako" /></div>
   </div>
   <script>
     Vue.component('hello',
       {
-        data: function(){
-          return {
-            message: 'これはあたらしいメッセージ'
-          };
-        },
-        template: '<p class= "hello">{{message}}</p>',
+        props: ['name'],
+        template: '<p class= "hello">Hello {{name}}</p>',
       })
 
     var app = new Vue({
