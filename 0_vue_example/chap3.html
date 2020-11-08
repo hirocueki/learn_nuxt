@@ -17,25 +17,21 @@
   </style>
   <h1>Vue.js</h1>
   <div id="app">
-    <div>
-      <hello v-bind:name='name' />
-    </div>
-    <div>
-      <input type='text' v-model='name'>
-    </div>
+    <hello />
   </div>
   <script>
     var hello = Vue.component('hello',
       {
-        props: { name:String },
-        template: '<p class= "hello">Hello {{name}}</p>',
+        data:function(){
+          return {
+            counter:0
+          };
+        },
+        template: '<p v-on:click="counter++;" class="hello">clicked: {{counter}}</p>',
       })
 
     var app = new Vue({
       el: '#app',
-      data: {
-        name: 'no-name'
-      }
     });
   </script>
 </body>
