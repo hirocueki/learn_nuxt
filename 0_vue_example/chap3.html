@@ -22,7 +22,12 @@
   <script>
     Vue.component('hello',
       {
-        template: '<p class= "hello">Hello!</p>'
+        data: function(){
+          return {
+            message: 'これはあたらしいメッセージ'
+          };
+        },
+        template: '<p class= "hello">{{message}}</p>',
       })
 
     var app = new Vue({
