@@ -8,17 +8,35 @@
 </head>
 
 <body>
+  <style>
+    .ok{
+      font-size:24pt;
+      color: blue;
+      padding: 5px 10px;
+      border: 2px solid red;
+    }
+    .ng {
+      font-size: 20pt;
+      color: gray;
+    }
+  </style>
   <h1>Vue.js</h1>
   <div id="app">
-    <p :style="style">{{ message }}</p>
+    <p v-if='flag' class='ok'>
+      これは正常な表示です。
+    </p>
+    <p v-else class='ng'>
+      現在、問題が発生チュウ
+    </p>
   </div>
   <hr>
-  <input type="number" onChange="doChange(event);" calue="20">
+  <button onclick='doAction();'>
+  Click
+</button>
 
   <script>
     var data = {
-      message: 'Hello Vue!',
-      style: 'font-size: 20pt; color: red;'
+      flag: true
     };
 
     var app = new Vue({
@@ -26,8 +44,8 @@
       data: data,
     });
 
-    function doChange(event) {
-      data.style = 'font-size:' + event.target.value + 'pt;color: red;'
+    function doAction() {
+      data.flag = !data.flag;
     }
   </script>
 </body>
