@@ -17,7 +17,12 @@
   </style>
   <h1>Vue.js</h1>
   <div id="app">
-    <hello v-for='item in data' v-bind:name='item' />
+    <div>
+      <hello v-bind:name='name' />
+    </div>
+    <div>
+      <input type='text' v-model='name'>
+    </div>
   </div>
   <script>
     var hello = Vue.component('hello',
@@ -29,7 +34,7 @@
     var app = new Vue({
       el: '#app',
       data: {
-        data: ["Taro", 'Hanako', 'Sachiko']
+        name: 'no-name'
       }
     });
   </script>
